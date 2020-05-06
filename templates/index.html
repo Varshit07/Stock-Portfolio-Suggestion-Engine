@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>My Personal Website</h1>
-<p>Hi, this is my personal website.</p>
+<h1>Stock Portfolio Suggestion</h1>
+    <div>
+        <p>Allocate funds to Stocks</p>
+        <form action="/showStockAmounts" method="POST">
+        {% for stock in stocks: %}
+            <label for={{stock}}>{{stock}}</label><br>
+            <input type="text" name={{stock}}><br>
+        {% endfor %}
+        <input type="submit" name="my-form" value="Calculate Stock Profit">
+        </form>
+        {% if stockShares == "": %}
+	    {% else %}
+            {% for share in stockShares: %}
+                <p>{{ share }}</p>
+	        {% endfor %}
+	    {% endif %}
+    </div>
 </body>
 </html>

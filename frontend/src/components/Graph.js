@@ -78,8 +78,7 @@ class Graph extends Component {
 
   render() { 
     return (
-        <div className="GRAPH">  
-        <h5 style={{color: "#dc3545"}} className="text-center">Current Values</h5>        
+        <div className="GRAPH">          
           <PieChart width={600} height={400}>
            
         <Pie

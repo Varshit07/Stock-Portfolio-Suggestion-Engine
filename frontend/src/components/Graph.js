@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Graph.css'
 import {
-    PieChart, Pie, Sector, Cell,
+    PieChart, Pie, Sector, Cell, Legend
   } from 'recharts';
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -49,6 +49,7 @@ import {
         <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
           {`Qt ${purchase}`}
         </text>
+
       </g>
     );
   };
@@ -77,8 +78,10 @@ class Graph extends Component {
 
   render() { 
     return (
-        <div className="GRAPH">          
+        <div className="GRAPH">  
+        <h5 style={{color: "#dc3545"}} className="text-center">Current Values</h5>        
           <PieChart width={600} height={400}>
+           
         <Pie
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
@@ -95,7 +98,18 @@ class Graph extends Component {
             this.props.data.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]}/>)
           }
           </Pie>
-      </PieChart>        
+           
+          <Legend
+          payload={
+            this.props.data.map(
+              (item, index) => ({
+                color : `${COLORS[index % COLORS.length]}`,
+                value: `${item.CompanyName}`,
+              })
+            )}
+            layout='vertical' verticalAlign="middle" align="right"/>
+      </PieChart> 
+             
         </div>
       
       )

@@ -10,15 +10,14 @@ def get_details(stock):
     now = datetime.datetime.now()
     today_day = calendar.day_name[now.weekday()]
     today_date = today_day + now.strftime(" %B %d %H:%M:%S ") + time.tzname[1] + now.strftime(" %Y")  
-    a = Stock(stock, token="pk_6d6e19d4b5c041f18dc2f5c19e792729")
+    a = Stock(stock, token="pk_929bd571130f47e880347fa21715f08c")
     stock_details = a.get_quote()
     details = {}
     # get today's date
     details["Today_Date"] = today_date
     
     # get stock info
-    stock_name = stock_details['companyName'] + "(" + stock  +")"
-    details["Stock"] = stock_name
+    details["Stock"] = stock_details['companyName']
     present_price = stock_details['latestPrice']
     past_price = stock_details['previousClose']
     if past_price == None:
@@ -48,11 +47,11 @@ def get_graphs_data(stocks,amount):
         get_ethical_stocks = {}
         stocks_bought = {}
         send_data = {}
+        company_name = {}
         for i in stocks:
             get_ethical_stocks[i] = float(get_details(i)['Price'].split(" ")[0])
-        
+            company_name[i] = get_details(i)['Stock']
         initial_sum = sum(get_ethical_stocks.values())
-
         while amount > min(get_ethical_stocks.values()):
             for j in get_ethical_stocks.items():
                 if amount > j[1]:
@@ -77,6 +76,7 @@ def get_graphs_data(stocks,amount):
             stck = {}
             stck['Price'] = i[0]
             stck['LatestPrice'] = get_ethical_stocks[i[0]]
+            stck['CompanyName'] = company_name[i[0]]
             stck['purchase'] = i[1]
             stck_array.append(stck)
 
@@ -84,7 +84,7 @@ def get_graphs_data(stocks,amount):
         for i in range(len(get_total_price.index)):
             ttl_price = {}
             ttl_price['Date'] =  get_total_price.iloc[i]['Date'].strftime("%Y-%m-%d")
-            ttl_price['Amount'] = get_total_price.iloc[i]['Total_price']
+            ttl_price['Amount'] = int(get_total_price.iloc[i]['Total_price'])
             last_5_days.append(ttl_price)
             
         send_data['Stock'] = stck_array
@@ -116,4 +116,4 @@ def invested_amount(amount,investment_type):
 
 
 # print(getHistoricalPrices("AAPL"))
-# print(invested_amount(5000,"growth"))  
+# print(invested_amount(9999999999,"growth"))  

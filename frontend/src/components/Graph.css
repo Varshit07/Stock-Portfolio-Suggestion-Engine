@@ -1,4 +1,7 @@
 .GRAPH {
-    width: 600px;
+    width: 500px;
     margin: auto;
+}
+.graphplot {
+    padding: 10px 5px;
 }

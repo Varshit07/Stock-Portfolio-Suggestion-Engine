@@ -16,7 +16,8 @@ def index():
                 'Stock': response['Stock'],
                 'Stock1': resp['Stock'],
                 'Lastfive': response['Lastfive'],
-                'Lastfive1': resp['Lastfive']
+                'Lastfive1': resp['Lastfive'],
+                'checked': req['investmenttype']
             }
             return jsonify(combine)
         combine = {
@@ -24,6 +25,7 @@ def index():
                 'Stock1': [],
                 'Lastfive': response['Lastfive'],
                 'Lastfive1': [],
+                'checked': req['investmenttype']
             }
         return jsonify(combine)
     else:

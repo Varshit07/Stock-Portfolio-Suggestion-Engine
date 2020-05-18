@@ -170,7 +170,7 @@ class Button extends Component {
        {isLoading ? <div className="d-flex justify-content-center"><h4 style = {{color: 'grey'}}>Loading Shares Investment... &nbsp; </h4><div className="spinner-border loading text-danger" role="status">
   <span className="sr-only">Loading...</span>
 </div><br /><br /><br /> </div>: ""}
-{isLoading ? <div className="d-flex justify-content-center"><br /><br /><br /><h4 style = {{color: 'grey'}}>Loading 5 Day Portfolio... &nbsp;</h4><div className="spinner-grow text-danger" role="status">
+{isLoading ? <div className="d-flex justify-content-center"><br /><br /><br /><h4 style = {{color: 'grey'}}>Loading 5-Day Portfolio... &nbsp;</h4><div className="spinner-grow text-danger" role="status">
   <span className="sr-only">Loading...</span>
 </div><div className="spinner-grow text-danger" role="status">
   <span className="sr-only">Loading...</span>
@@ -206,7 +206,7 @@ class Button extends Component {
           <div className="row">
             
           <div className="col-md-5 graphplot">
-          <h5 style= {{color: "#dc3545"}} className="text-center">5 Day Portfolio</h5>
+          <h5 style= {{color: "#dc3545"}} className="text-center">5-Day Portfolio</h5>
           <br />
           <br />
             <BarChartShare
@@ -218,7 +218,7 @@ class Button extends Component {
         
             <div className="col-md-5 graphplot">
               
-              <h5 style={{color: "#dc3545"}} className = "text-center">5 Day Portfolio</h5>
+              <h5 style={{color: "#dc3545"}} className = "text-center">5-Day Portfolio</h5>
               <br />
               <br />
             <BarChartShare
@@ -242,7 +242,7 @@ class Button extends Component {
             ></Graph>
             </div> <div className="col-md-12 graphplot">
               
-              <h5 style= {{color: "#dc3545"}} className="text-center">5 Day Portfolio</h5>
+              <h5 style= {{color: "#dc3545"}} className="text-center">5-Day Portfolio</h5>
               <br />
             <BarChartShare
               key={this.state.LastFive}

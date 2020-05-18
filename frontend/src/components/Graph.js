@@ -80,7 +80,7 @@ class Graph extends Component {
     return (
         <div className="GRAPH">  
         <h5 style={{color: "#dc3545"}} className="text-center">Current Values</h5>        
-          <PieChart width={570} height={400}>
+          <PieChart width={600} height={400}>
            
         <Pie
           activeIndex={this.state.activeIndex}
@@ -107,7 +107,7 @@ class Graph extends Component {
                 value: `${item.CompanyName}`,
               })
             )}
-            layout='vertical' verticalAlign="middle" align="right"/>
+            layout='vertical' verticalAlign="bottom" align="center"/>
       </PieChart> 
              
         </div>

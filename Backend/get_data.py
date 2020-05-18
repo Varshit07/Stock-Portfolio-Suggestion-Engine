@@ -48,6 +48,7 @@ def get_graphs_data(stocks,amount):
         stocks_bought = {}
         send_data = {}
         company_name = {}
+        total_investment = {}
         for i in stocks:
             get_ethical_stocks[i] = float(get_details(i)['Price'].split(" ")[0])
             company_name[i] = get_details(i)['Stock']
@@ -57,8 +58,6 @@ def get_graphs_data(stocks,amount):
                 if amount > j[1]:
                     amount = amount - j[1]
                     stocks_bought[j[0]] = stocks_bought.get(j[0],0) + 1
-        
-        
         
         df_stocks_0 = getHistoricalPrices(stocks[0]) 
         df_stocks_0['price_'+stocks[0]] = df_stocks_0['price_'+stocks[0]] * stocks_bought[stocks[0]]
@@ -113,7 +112,3 @@ def invested_amount(amount,investment_type):
         growth_stocks = ['V', 'MA', 'AXP']
         return get_graphs_data(growth_stocks,amount)
         
-
-
-# print(getHistoricalPrices("AAPL"))
-# print(invested_amount(9999999999,"growth"))  

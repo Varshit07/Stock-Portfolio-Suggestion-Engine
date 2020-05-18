@@ -210,7 +210,7 @@ class Button extends Component {
               <div className="col-md-6">
                 <h2 style={{ textTransform: "capitalize", color: "#dc3545" }} className="text-center">{this.state.value.checked[0]} Investing</h2>
 
-                <h5 style={{ textTransform: "capitalize", color: "#dc3545" }} className="text-center">Amount Invested: ${this.state.value.Lastfive[4].Amount}</h5> 
+                <h5 style={{ textTransform: "capitalize", color: "#dc3545" }} className="text-center">Current Value: ${this.state.value.Lastfive[4].Amount}</h5>
 
                 <Graph
                   key={this.state.value.Stock}
@@ -221,7 +221,7 @@ class Button extends Component {
               <div className="col-md-6">
                 <h2 style={{ textTransform: "capitalize", color: "#dc3545" }} className="text-center">{this.state.value.checked[1]} Investing</h2>
 
-                <h5 style={{ textTransform: "capitalize", color: "#dc3545" }} className="text-center">Amount Invested: ${this.state.value.Lastfive1[4].Amount}</h5> 
+                <h5 style={{ textTransform: "capitalize", color: "#dc3545" }} className="text-center">Current Value: ${this.state.value.Lastfive1[4].Amount}</h5>
 
                 <Graph
                   key={this.state.value.Stock}

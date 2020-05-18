@@ -15,7 +15,7 @@ class BarChartShare extends Component {
     return (
       <div className="BARCHART">
         <LineChart
-          width={600}
+          width={580}
           height={300}
           data={this.props.data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}

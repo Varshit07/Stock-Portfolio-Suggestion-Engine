@@ -34,7 +34,7 @@ class BarChartShare extends Component {
           margin={{ top: 5, right: 30, left: 20, bottom: 50 }}
         >
           <XAxis dataKey="Date" tick={<CustomizedAxisTick />} />
-          <YAxis type="number" domain={['dataMin - 100','dataMax + 100']} />
+          <YAxis type="number" domain={['auto','auto']} />
           <CartesianGrid strokeDasharray="5 5" />
           <Tooltip />
           <Line

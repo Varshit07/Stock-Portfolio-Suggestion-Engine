@@ -10,6 +10,20 @@ import {
   Legend,
 } from "recharts";
 
+class CustomizedAxisTick extends Component {
+  render() {
+    const {
+      x, y, stroke, payload,
+    } = this.props;
+
+    return (
+      <g transform={`translate(${x},${y})`}>
+        <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-35)">{payload.value}</text>
+      </g>
+    );
+  }
+}
+
 class BarChartShare extends Component {
   render() {
     return (
@@ -18,13 +32,12 @@ class BarChartShare extends Component {
           width={580}
           height={300}
           data={this.props.data}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          margin={{ top: 5, right: 30, left: 20, bottom: 50 }}
         >
-          <XAxis dataKey="Date" />
+          <XAxis dataKey="Date" tick={<CustomizedAxisTick />} />
           <YAxis type="number" domain={['dataMin - 100','dataMax + 100']} />
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid strokeDasharray="5 5" />
           <Tooltip />
-          <Legend />
           <Line
             type="monotone"
             dataKey="Amount"

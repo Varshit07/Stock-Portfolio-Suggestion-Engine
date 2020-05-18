@@ -80,14 +80,14 @@ class Button extends Component {
               style={{ width: "400px", margin: "auto" }}
             >
               <div className="form-group">
-                <label title="Enter Amount to Invest"  htmlFor="sharename">Enter Amount</label>
+                <label title="Enter Amount to Invest"  htmlFor="sharename">Enter Amount to Invest</label>
                 <input
                   type="number"
                   className="form-control"
                   name="share"
                   min="5000"
                   max="100000000"
-                  placeholder="Amount to Invest"
+                  placeholder="Minimum investment is $5000"
                   required
                 />
               </div>
@@ -167,10 +167,10 @@ class Button extends Component {
             </form>
           </div>
         </div>
-       {isLoading ? <div className="d-flex justify-content-center"><h4 style = {{color: 'grey'}}>Loading Current Values... &nbsp; </h4><div className="spinner-border loading text-danger" role="status">
+       {isLoading ? <div className="d-flex justify-content-center"><h4 style = {{color: 'grey'}}>Loading Shares Investment... &nbsp; </h4><div className="spinner-border loading text-danger" role="status">
   <span className="sr-only">Loading...</span>
 </div><br /><br /><br /> </div>: ""}
-{isLoading ? <div className="d-flex justify-content-center"><br /><br /><br /><h4 style = {{color: 'grey'}}>Loading Weekly Trends... &nbsp;</h4><div className="spinner-grow text-danger" role="status">
+{isLoading ? <div className="d-flex justify-content-center"><br /><br /><br /><h4 style = {{color: 'grey'}}>Loading 5 Day Portfolio... &nbsp;</h4><div className="spinner-grow text-danger" role="status">
   <span className="sr-only">Loading...</span>
 </div><div className="spinner-grow text-danger" role="status">
   <span className="sr-only">Loading...</span>
@@ -204,9 +204,8 @@ class Button extends Component {
             </div>
           </div>
           <div className="row">
-            
           <div className="col-md-6 graphplot">
-          <h5 style= {{color: "#dc3545"}} className="text-center">Weekly Trends</h5>
+          <h5 style={{color: "#dc3545"}} className = "text-center">5 Day Portfolio</h5>
           <br />
           <br />
             <BarChartShare
@@ -218,7 +217,7 @@ class Button extends Component {
         
             <div className="col-md-6 graphplot">
               
-              <h5 style={{color: "#dc3545"}} className = "text-center">Weekly Trends</h5>
+              <h5 style={{color: "#dc3545"}} className = "text-center">5 Day Portfolio</h5>
               <br />
               <br />
             <BarChartShare
@@ -242,7 +241,7 @@ class Button extends Component {
             ></Graph>
             </div> <div className="col-md-12 graphplot">
               
-              <h5 style= {{color: "#dc3545"}} className="text-center">Weekly Trends</h5>
+              <h5 style= {{color: "#dc3545"}} className="text-center">5 Day Portfolio</h5>
               <br />
             <BarChartShare
               key={this.state.LastFive}

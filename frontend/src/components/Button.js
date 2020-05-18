@@ -182,7 +182,7 @@ class Button extends Component {
             
           <div className="row">
           
-            <div className="col-md-5 graphplot">
+            <div className="col-md-6">
              <h2 style= {{textTransform: "capitalize", color: "#dc3545"}} className = "text-center">{this.state.value.checked[0]} Investing</h2>
              <br />
              <br />
@@ -191,8 +191,8 @@ class Button extends Component {
               data={this.state.value.Stock}
             ></Graph>
             </div>
-            <div className="col-md-2 graphplot"></div>
-            <div className="col-md-5 graphplot">
+            
+            <div className="col-md-6">
                <h2 style= {{textTransform: "capitalize", color: "#dc3545"}} className = "text-center">{this.state.value.checked[1]} Investing</h2>
                <br />
                <br />
@@ -204,7 +204,6 @@ class Button extends Component {
             </div>
           </div>
           <div className="row">
-            
           <div className="col-md-5 graphplot">
           <h5 style= {{color: "#dc3545"}} className="text-center">5-Day Portfolio</h5>
           <br />
@@ -214,9 +213,9 @@ class Button extends Component {
               data={this.state.value.Lastfive}
             ></BarChartShare>
             </div>
-            <div className="col-md-2"></div>
+            
         
-            <div className="col-md-5 graphplot">
+            <div className="col-md-6 graphplot">
               
               <h5 style={{color: "#dc3545"}} className = "text-center">5-Day Portfolio</h5>
               <br />

@@ -59,8 +59,6 @@ class Button extends Component {
         value: response.data,
         isLoading: false,
       });
-      
-    console.log(this.state.value);
     });
   }
 
@@ -249,6 +247,8 @@ class Button extends Component {
             ></BarChartShare>
             </div></div></div>): !this.state.isLoaded ? "" : "Loading...")
         )}
+        <br />
+        <br />
       </div>
       
     );

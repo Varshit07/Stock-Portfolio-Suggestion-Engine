@@ -279,7 +279,7 @@ class Button extends Component {
                     </h2>
 
                     <h5 style={{ textTransform: "capitalize", color: "#dc3545" }} className="text-center">
-                      Amount Invested: ${this.state.value.Lastfive[4].Amount}
+                      Current Value: ${this.state.value.Lastfive[4].Amount}
                     </h5> 
 
                     <Graph

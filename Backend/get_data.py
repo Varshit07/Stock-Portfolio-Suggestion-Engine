@@ -10,7 +10,7 @@ def get_details(stock):
     now = datetime.datetime.now()
     today_day = calendar.day_name[now.weekday()]
     today_date = today_day + now.strftime(" %B %d %H:%M:%S ") + time.tzname[1] + now.strftime(" %Y")  
-    a = Stock(stock, token="pk_929bd571130f47e880347fa21715f08c")
+    a = Stock(stock, token=process.env.TOKEN)
     stock_details = a.get_quote()
     details = {}
     # get today's date
